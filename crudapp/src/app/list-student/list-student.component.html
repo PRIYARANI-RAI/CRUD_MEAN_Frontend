@@ -1,1 +1,27 @@
-<p>list-student works!</p>
+<div class="row">
+    <div class="col-md-12 text-center">
+        <h2>Student List</h2>
+    </div>
+</div>
+<div class="row">
+    <table class="table">
+        <thead>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Action</th>
+        </thead>
+        <tbody class="table-group-divider">
+            <tr *ngFor="let student of students">
+                <td>{{student.firstname}}</td>
+                <td>{{student.lastname}}</td>
+                <td>{{student.email}}</td>
+                <td>
+                    <a href = "edit-student/{{student._id}}"><button type="button" class="btn btn-success">Edit</button></a>&nbsp;
+                    <button type="button" class="btn btn-danger" (click)="delStudent(student)" >Delete</button>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
